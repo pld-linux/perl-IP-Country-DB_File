@@ -6,17 +6,19 @@
 %define		pnam	Country-DB_File
 Summary:	IP::Country::DB_File - IPv4 and IPv6 to country translation using DB_File
 Name:		perl-IP-Country-DB_File
-Version:	3.03
+Version:	4.00
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/IP/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	749ea4ca65126ef38d30bb386865c49e
+Source0:	https://www.cpan.org/authors/id/N/NW/NWELLNHOF/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	753f327cda0b2d907a084881e3300bde
 URL:		https://metacpan.org/dist/IP-Country-DB_File
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.745
+# loaded implicitly by LWP::UserAgent for https statistics URLs
+Requires:	perl-LWP-Protocol-https
 %if %{with tests}
 BuildRequires:	perl-Math-Int64
 %endif
